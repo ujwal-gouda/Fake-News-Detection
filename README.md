@@ -40,13 +40,43 @@ pip install -r requirements.txt
 jupyter notebook
 ```
 
-## Dataset
-- The dataset contains two types of news:
-  - real news
-  - fake news
-- You can use publicly available datasets like:
-  - Kaggle Fake News Dataset
-  
+## 📁 Dataset
+
+This project uses the Fake News Detection dataset from Kaggle:
+
+🔗 https://www.kaggle.com/datasets/bhavikjikadara/fake-news-detection
+
+### 📊 Dataset Details
+- Contains news articles labeled as:
+  - `0 → Real News`
+  - `1 → Fake News`
+- Includes text-based features for training the model
+
+### 📥 How to Use
+1. Download the dataset from Kaggle
+2. Extract the files into your project folder
+3. Update the file path in the code accordingly
+
+Example:
+```python
+import pandas as pd
+
+df = pd.read_csv("dataset.csv")
+```
+
+## If You Need to Change Columns in Code
+
+That dataset usually has columns like:
+- `title`
+- `text`
+- `label`
+
+### Update your code like this:
+
+``` python
+X = df['text']   # input (news content)
+y = df['label']  # output (0 or 1)
+  ```
 ## Features
 - Handles large text data efficiently
 - Uses sequence learning for better context understanding
